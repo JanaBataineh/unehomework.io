@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>واجهة حسابية بسيطة</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .container {
+    width: 300px;
+    margin: 0 auto;
+    background-color: lightgreen;
+    border: 2px solid red;
+    padding: 20px;
+}
+
+.input-group, .result-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+
+input[type="text"] {
+    width: 150px;
+    padding: 5px;
+}
+
+#result {
+    background-color: goldenrod;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    background-color: lightblue;
+}
+</style>
+<script>
+    function compute() {
+    // هنا يمكنك إضافة منطق الحساب
+    // على سبيل المثال:
+    let x = document.getElementById('x').value;
+    let y = document.getElementById('y').value;
+    let result = x * y; // يمكنك تغيير عملية الحساب هنا
+    document.getElementById('result').value = result;
+}
+
+function clearFields() {
+    document.getElementById('x').value = '';
+    document.getElementById('y').value = '';
+    document.getElementById('result').value = '';
+}
+</script>
+<body>
+    <div class="container">
+        <div class="input-group">
+            <label for="x">Enter value of X Here:</label>
+            <input type="text" id="x">
+        </div>
+        <div class="input-group">
+            <label for="y">Enter value of Y Here:</label>
+            <input type="text" id="y">
+        </div>
+        <div class="result-group">
+            <label for="result">Result of F(X,Y)=</label>
+            <input type="text" id="result" disabled>
+        </div>
+        <div class="button-group">
+            <button onclick="compute()">Compute</button>
+            <button onclick="clearFields()">Clear</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
